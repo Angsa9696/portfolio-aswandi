@@ -1,6 +1,7 @@
 body {
   background: linear-gradient(var(--sky), #ffffff);
   color: var(--text-dark);
+  padding-top: 80px;
 }
 h1,
 h2 {
@@ -154,47 +155,88 @@ h2 {
   }
 }
 /* DAUN */
-.leaves {
+.leaves span {
   position: fixed;
-  bottom: 10px;
-  left: 10px;
+  top: -50px;
   font-size: 24px;
-  opacity: 0.6;
-  animation: floatLeaf 6s ease-in-out infinite;
+  animation: fall linear infinite;
 }
 
-@keyframes floatLeaf {
-  0%,
-  100% {
-    transform: translateY(0);
+/* beda posisi & speed */
+.leaves span:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+}
+
+.leaves span:nth-child(2) {
+  left: 30%;
+  animation-duration: 10s;
+}
+
+.leaves span:nth-child(3) {
+  left: 60%;
+  animation-duration: 7s;
+}
+
+.leaves span:nth-child(4) {
+  left: 80%;
+  animation-duration: 9s;
+}
+
+/* GERAK RANDOM (ANGIN) */
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(25vh) translateX(30px) rotate(90deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(50vh) translateX(-30px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(20px) rotate(270deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(-20px) rotate(360deg);
   }
 }
 /* NAVBAR */
 .navbar {
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 30px;
   z-index: 1000;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+/* kiri */
+.logo {
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.navbar a {
+/* tengah */
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
   text-decoration: none;
-  color: black;
-  font-weight: bold;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1);
 }
 /* SMOOTH SCROLL */
 html {
@@ -278,25 +320,7 @@ html {
   --soft-white: #ffffffcc;
   --text-dark: #2c3e50;
 }
-/* DAUN JATUH */
-.falling-leaves::before {
-  content: "🍃 🍂 🍃 🍂";
-  position: fixed;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  font-size: 24px;
-  animation: fall 10s linear infinite;
-}
 
-@keyframes fall {
-  0% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
 /* MUSIC */
 #music-btn {
   position: fixed;
@@ -331,4 +355,28 @@ html {
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
+}
+/* HERO BUTTON */
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #a8d5ba;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #7fbf9c;
+  transform: scale(1.05);
+}
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 }

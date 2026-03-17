@@ -15,7 +15,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-alert("JS CONNECTED");
+// alert("JS CONNECTED");
 // DARK MODE
 const toggle = document.getElementById("dark-toggle");
 
@@ -42,4 +42,3 @@ if (btn && music) {
     isPlaying = !isPlaying;
   });
 }
-
