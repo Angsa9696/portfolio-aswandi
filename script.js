@@ -1,44 +1,88 @@
-const elements = document.querySelectorAll(".section");
+// =========================
+// SCROLL FADE ANIMATION
+// =========================
+const sections = document.querySelectorAll(".section");
 
-elements.forEach((el) => {
-  el.classList.add("fade");
+sections.forEach((section) => {
+  section.classList.add("fade");
 });
 
-window.addEventListener("scroll", () => {
-  elements.forEach((el) => {
-    const position = el.getBoundingClientRect().top;
-    const screen = window.innerHeight;
+const revealOnScroll = () => {
+  const screenHeight = window.innerHeight;
 
-    if (position < screen - 100) {
-      el.classList.add("show");
+  sections.forEach((section) => {
+    const position = section.getBoundingClientRect().top;
+
+    if (position < screenHeight - 100) {
+      section.classList.add("show");
     }
   });
-});
+};
 
-// alert("JS CONNECTED");
+window.addEventListener("scroll", revealOnScroll);
+
+// =========================
 // DARK MODE
-const toggle = document.getElementById("dark-toggle");
+// =========================
+const darkToggle = document.getElementById("dark-toggle");
 
-if (toggle) {
-  toggle.addEventListener("click", () => {
+if (darkToggle) {
+  darkToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
   });
 }
-// MUSIC
-const music = document.getElementById("bg-music");
-const btn = document.getElementById("music-btn");
 
-if (btn && music) {
+// =========================
+// MUSIC CONTROL
+// =========================
+const music = document.getElementById("bg-music");
+const musicBtn = document.getElementById("music-btn");
+
+if (music && musicBtn) {
   let isPlaying = false;
 
-  btn.addEventListener("click", () => {
+  musicBtn.addEventListener("click", () => {
     if (isPlaying) {
       music.pause();
-      btn.textContent = "🔇";
+      musicBtn.textContent = "🔇";
     } else {
       music.play();
-      btn.textContent = "🔊";
+      musicBtn.textContent = "🔊";
     }
+
     isPlaying = !isPlaying;
   });
 }
+let volume = 0;
+
+const fadeIn = setInterval(() => {
+  if (volume < 0.2) {
+    volume += 0.01;
+    music.volume = volume;
+  } else {
+    clearInterval(fadeIn);
+  }
+}, 100);
+// =========================
+// CURSOR
+// =========================
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+// =========================
+// LOADER
+// =========================
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.display = "none";
+});
+// =========================
+// BACKGROUND GERAK
+// =========================
+window.addEventListener("scroll", () => {
+  const scroll = window.scrollY;
+  document.querySelector(".hero").style.backgroundPositionY =
+    scroll * 0.5 + "px";
+});

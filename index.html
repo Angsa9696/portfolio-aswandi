@@ -3,108 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <title>Aswandi Portfolio</title>
+
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <!-- AWAN BERGERAK -->
+    <!-- LOADER -->
+    <div id="loader">
+     <h1>Welcome 🌿</h1>
+    </div>
+    <!-- ☁️ CLOUD -->
     <div class="clouds">
       <div class="cloud"></div>
       <div class="cloud"></div>
       <div class="cloud"></div>
     </div>
-    <div class="leaves">
-  <span>🍃</span>
-  <span>🍂</span>
-  <span>🍃</span>
-  <span>🍂</span>
-</div>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-  <div class="logo">Aswandi</div>
 
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#favorites">Favorites</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <!-- 🍃 LEAVES -->
+    <div class="leaves">
+      <span>🍃</span>
+      <span>🍂</span>
+      <span>🍃</span>
+      <span>🍂</span>
+    </div>
+
+    <!-- 🧭 NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">Aswandi</div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
     <!-- 🌿 HERO -->
-    <!-- ABOUT -->
-    <div class="hero">
+    <section id="home" class="hero">
       <div class="hero-text">
         <h1>Hi, I'm Aswandi Bin Hasbi 👋</h1>
         <p>Web Developer | ML Enthusiast | UI/UX Learner</p>
         <p>I build simple, meaningful, and creative digital experiences.</p>
+
         <a href="#projects" class="cta-btn">View My Work</a>
+        <a href="mailto:aswandihasbi@email.com" class="hire-btn">Hire Me</a>
       </div>
 
-     <div class="character-container">
-  <img src="images/character.jpeg" class="character">
-  <div class="shadow"></div>
-</div>
-</div>
+      <div class="character-container">
+        <img src="images/character.jpeg" class="character" />
+        <div class="shadow"></div>
       </div>
-    </div>
+    </section>
 
     <!-- 🌱 ABOUT -->
-    <section id="about" class="section">
-      <h2>About Me</h2>
+    <section id="about" class="section fade-up">
+      <h2>About Me 🌿</h2>
       <p>
-        I am a passionate learner in web development, machine learning, and
-        UI/UX design. I enjoy building projects that combine logic and
-        creativity.
+        I am Aswandi, a beginner web developer and machine learning enthusiast.
+        I love creating interactive and aesthetic websites inspired by anime,
+        especially Studio Ghibli style. I also enjoy music and anime
+        discussions.
       </p>
     </section>
 
     <!-- 💻 PROJECTS -->
-    <section id="projects" class="section">
+    <section id="projects" class="section fade-left">
       <h2>Projects</h2>
 
       <div class="project-container">
-        <!-- Project 1 -->
-         <div class="project-card">
-          <img src="images/3dCarAnimation.jpeg" alt="3D Car">
-          <h3>3D Car Animation</h3>
-           <p>
-A fun experiment to bring 3D animation into a simple web experience,
-inspired by playful motion design.
-</p>
-         <div class="buttons">
-           <a href="https://youtu.be/A-jixA-qroc" target="_blank">Live Demo</a>
-            <a href="#">GitHub</a>
-     </div>
-</div>
-        <!-- Project 2 -->
         <div class="project-card">
-          <img src="images/uiux-1.png" alt="3D Car">
-          <h3>Ticketing Website</h3>
-           <p>
-A fun experiment to bring 3D animation into a simple web experience,
-inspired by playful motion design.
-</p>
-         <div class="buttons">
-           <a href="https://youtu.be/A-jixA-qroc" target="_blank">Live Demo</a>
+          <img src="images/3dCarAnimation.jpeg" alt="3D Car" />
+          <h3>3D Car Animation</h3>
+          <p>
+            A fun experiment to bring 3D animation into a simple web experience.
+          </p>
+          <div class="buttons">
+            <a href="https://youtu.be/A-jixA-qroc" target="_blank">Live Demo</a>
             <a href="#">GitHub</a>
-     </div>
+          </div>
         </div>
+
+        <div class="project-card">
+          <img src="images/uiux-1.png" alt="3D Car" />
+          <h3>Ticketing Website</h3>
+          <p>
+            A web-based ticket booking system built using HTML, CSS, and
+            JavaScript.
+          </p>
+          <div class="buttons">
+            <a href="https://youtu.be/A-jixA-qroc" target="_blank">Live Demo</a>
+            <a href="#">GitHub</a>
+          </div>
+        
       </div>
     </section>
 
     <!-- 🧠 SKILLS -->
-    <section id="skills" class="section">
+    <section id="favorites" class="section fade-right">
       <h2>Skills</h2>
       <p>HTML, CSS, JavaScript, Python, Flask, Scikit-learn</p>
     </section>
 
     <!-- 🎵 FAVORITES -->
-    <section id="favorites" class="section">
+    <section id="contact" class="section fade-up">
       <h2>Things I Love</h2>
 
       <h3>🎧 Music</h3>
@@ -128,20 +141,26 @@ inspired by playful motion design.
 
     <!-- 📬 CONTACT -->
     <section id="contact" class="section">
-  <h2>Contact Me 📬</h2>
-  <p>Email: aswandi@email.com</p>
-  <p>GitHub: github.com/angsa9696</p>
-</section>
+      <h2>Contact Me 📬</h2>
+      <p>Email: aswandihasbi@email.com</p>
+      <p>GitHub: https://github.com/angsa9696</p>
+    </section>
 
+    <!-- 🔘 CONTROLS -->
     <button id="dark-toggle">🌙</button>
-<button id="music-btn">🔊</button>
+    <button id="music-btn">🔊</button>
 
-<audio id="bg-music" loop>
-  <source src="music/ghibli.mp3" type="audio/mp3">
-</audio>
-<script src="script.js"></script>
+    <audio id="bg-music" loop>
+      <source src="music/ghibli.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- 🧾 FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Aswandi. Built with passion 🌿</p>
+    </footer>
+
+    <div class="cursor"></div>
+
+    <script src="script.js"></script>
   </body>
-  <footer class="footer">
-  <p>© 2026 Aswandi. Built with passion 🌿</p>
-</footer>
 </html>
