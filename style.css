@@ -80,6 +80,7 @@ h2 {
   border-radius: 25px;
   padding: 60px;
   margin: 40px;
+  margin-bottom: 80px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -295,4 +296,39 @@ html {
   100% {
     transform: translateY(100vh);
   }
+}
+/* MUSIC */
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #a8d5ba;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* DARK MODE */
+.dark-mode {
+  background: #1e2a2f;
+  color: #f1f1f1;
+}
+
+.dark-mode .section {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .project-card {
+  background: #2c3e50;
+}
+#dark-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }

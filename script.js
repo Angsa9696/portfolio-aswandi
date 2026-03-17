@@ -14,3 +14,32 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+alert("JS CONNECTED");
+// DARK MODE
+const toggle = document.getElementById("dark-toggle");
+
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+}
+// MUSIC
+const music = document.getElementById("bg-music");
+const btn = document.getElementById("music-btn");
+
+if (btn && music) {
+  let isPlaying = false;
+
+  btn.addEventListener("click", () => {
+    if (isPlaying) {
+      music.pause();
+      btn.textContent = "🔇";
+    } else {
+      music.play();
+      btn.textContent = "🔊";
+    }
+    isPlaying = !isPlaying;
+  });
+}
+
