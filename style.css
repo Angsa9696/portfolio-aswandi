@@ -16,6 +16,7 @@ body {
   background: linear-gradient(var(--sky), #ffffff);
   color: var(--text-dark);
   padding-top: 80px;
+  z-index: 1;
 }
 
 h1,
@@ -34,6 +35,12 @@ h2 {
   padding: 0 80px;
   background: linear-gradient(to top, #a8d5ba, #bfe3f5);
   border-radius: 0 0 50px 50px;
+}
+.hero-desc {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 500px;
 }
 
 .hero-text {
@@ -145,6 +152,23 @@ h2 {
 
 .nav-links a:hover {
   transform: scale(1.1);
+}
+
+.nav-links a.active {
+  color: #a8d5ba;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: #a8d5ba;
+  border-radius: 2px;
 }
 
 /* =========================
@@ -434,4 +458,159 @@ h2 {
   align-items: center;
   z-index: 9999;
   font-size: 24px;
+}
+/* =========================
+   TYPING HERO
+========================= */
+#typing {
+  font-weight: 600;
+  font-size: 18px;
+  color: #2c3e50;
+}
+/* =========================
+   TFILTER PROJEK
+========================= */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  background: #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-buttons button.active {
+  background: #a8d5ba;
+  color: white;
+}
+
+.filter-buttons button:hover {
+  transform: scale(1.1);
+}
+/* =========================
+   EASTER EGG
+========================= */
+#easter-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: white; /* atau warna card */
+  padding: 20px 30px;
+  border-radius: 15px;
+
+  z-index: 99999;
+
+  /* efek modern tanpa gelap */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+#easter-modal button {
+  position: relative;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+/* BACKGROUND ANIMATION */
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* SHAKE EFFECT */
+.shake {
+  animation: shake 0.3s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px);
+  }
+  25% {
+    transform: translate(-1px, -2px);
+  }
+  50% {
+    transform: translate(-3px, 1px);
+  }
+  75% {
+    transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(1px, -1px);
+  }
+}
+/* GALAXY BACKGROUND */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* bintang */
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveStars 60s linear infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* layer kedua */
+.stars::after {
+  background-size: 100px 100px;
+  animation-duration: 120s;
+}
+
+/* animasi gerak */
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-500px);
+  }
+}
+
+/* aktifkan galaxy */
+.galaxy-mode .stars::before,
+.galaxy-mode .stars::after {
+  opacity: 1;
+}
+
+/* background gelap */
+.galaxy-mode {
+  background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
 }

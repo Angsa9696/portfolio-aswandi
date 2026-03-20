@@ -20,7 +20,7 @@
   <body>
     <!-- LOADER -->
     <div id="loader">
-     <h1>Welcome 🌿</h1>
+      <h1>Welcome 🌿</h1>
     </div>
     <!-- ☁️ CLOUD -->
     <div class="clouds">
@@ -53,12 +53,17 @@
     <!-- 🌿 HERO -->
     <section id="home" class="hero">
       <div class="hero-text">
-        <h1>Hi, I'm Aswandi Bin Hasbi 👋</h1>
-        <p>Web Developer | ML Enthusiast | UI/UX Learner</p>
-        <p>I build simple, meaningful, and creative digital experiences.</p>
+        <h1>Hi, I'm Aswandi 👋</h1>
 
-        <a href="#projects" class="cta-btn">View My Work</a>
-        <a href="mailto:aswandihasbi@email.com" class="hire-btn">Hire Me</a>
+        <h2 id="typing"></h2>
+
+        <p class="hero-desc">
+          Turning ideas into beautiful digital experiences. I love building
+          websites that are not just functional, but also feel alive ✨
+        </p>
+
+        <a href="#projects" class="cta-btn">🚀 View My Work</a>
+        <a href="#contact" class="hire-btn">💼 Hire Me</a>
       </div>
 
       <div class="character-container">
@@ -81,9 +86,15 @@
     <!-- 💻 PROJECTS -->
     <section id="projects" class="section fade-left">
       <h2>Projects</h2>
+      <div class="filter-buttons">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="web">Web</button>
+        <button data-filter="ml">Machine Learning</button>
+        <button data-filter="ui">UI/UX</button>
+      </div>
 
       <div class="project-container">
-        <div class="project-card">
+        <div class="project-card" data-category="web">
           <img src="images/3dCarAnimation.jpeg" alt="3D Car" />
           <h3>3D Car Animation</h3>
           <p>
@@ -95,7 +106,7 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-category="ui">
           <img src="images/uiux-1.png" alt="3D Car" />
           <h3>Ticketing Website</h3>
           <p>
@@ -106,18 +117,18 @@
             <a href="https://youtu.be/A-jixA-qroc" target="_blank">Live Demo</a>
             <a href="#">GitHub</a>
           </div>
-        
+        </div>
       </div>
     </section>
 
     <!-- 🧠 SKILLS -->
-    <section id="favorites" class="section fade-right">
+    <section id="skills" class="section fade-right">
       <h2>Skills</h2>
       <p>HTML, CSS, JavaScript, Python, Flask, Scikit-learn</p>
     </section>
 
     <!-- 🎵 FAVORITES -->
-    <section id="contact" class="section fade-up">
+    <section id="favorites" class="section fade-up">
       <h2>Things I Love</h2>
 
       <h3>🎧 Music</h3>
@@ -129,7 +140,7 @@
         <li>Cornerstone - Arctic Monkeys</li>
       </ul>
 
-      <h3>🎬 Anime </h3>
+      <h3>🎬 Anime</h3>
       <ul>
         <li>Steins;Gate</li>
         <li>Noragami</li>
@@ -138,7 +149,7 @@
         <li>KonoSuba</li>
       </ul>
 
-      <h3>🎬 Movies & Series </h3>
+      <h3>🎬 Movies & Series</h3>
       <ul>
         <li>Breaking Bad</li>
         <li>The Walking Dead</li>
@@ -168,7 +179,14 @@
       <p>© 2026 Aswandi. Built with passion 🌿</p>
     </footer>
 
-    <div class="cursor"></div>
+    <div id="easter-modal" class="hidden">
+      <div class="modal-content">
+        <h2>🎉 Secret Unlocked!</h2>
+        <p>Kamu menemukan easter egg 😎</p>
+        <button id="close-easter">Close</button>
+      </div>
+    </div>
+    <div class="stars"></div>
 
     <script src="script.js"></script>
   </body>
